@@ -1,0 +1,81 @@
+    /* Container for the product details */
+    .details-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Product title */
+    .details-container h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Product image */
+    .product-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    /* Product details styling */
+    .details-container p {
+        font-size: 1.2em;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    /* Bold labels for product details */
+    .details-container p strong {
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+        .details-container {
+            padding: 10px;
+        }
+
+        .details-container h1 {
+            font-size: 2em;
+        }
+
+        .details-container p {
+            font-size: 1em;
+        }
+    }
+
+    .image-slider {
+        position: relative;
+        width: 300px;  /* Set a reasonable width for the image */
+        margin: 0 auto; /* Center the slider */
+        text-align: center; /* Center the image and navigation buttons */
+    }
+
+    .image-slider img {
+        width: 100%;  /* Ensure the image fits within the slider's width */
+        height: auto; /* Keep the image's aspect ratio */
+    }
+
+    .prev, .next {
+        position: relative;
+        top: 10px; /* Adjust the position below the image */
+        font-size: 18px; /* You can adjust the size of the buttons */
+        cursor: pointer;
+        padding: 10px;
+        margin: 5px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: #555;
+    }

@@ -1,0 +1,249 @@
+/* ========================
+   PRODUCTS (page-scoped styles)
+   Cards, grid, slider, modal, buttons
+========================== */
+
+/* Grid wrapper for products */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Individual card */
+.product {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.06);
+  padding: 12px;
+  margin: 0;
+  width: 100%;
+  transition: transform .18s, box-shadow .2s, border-color .2s;
+}
+.product:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.10);
+  border-color: rgba(2,132,199,.25);
+}
+
+/* Image area / slider */
+.image-slider,
+.product img.slider-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+.product img.slider-image {
+  transition: transform .4s, filter .2s;
+  cursor: zoom-in;
+}
+.product:hover img.slider-image { transform: scale(1.03); }
+
+.image-slider { position: relative; }
+.image-slider .prev,
+.image-slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-size: 18px;
+  line-height: 38px;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s, background .2s;
+}
+.image-slider .prev { left: 8px; }
+.image-slider .next { right: 8px; }
+.image-slider:hover .prev,
+.image-slider:hover .next { opacity: 1; pointer-events: auto; }
+.image-slider .prev:hover,
+.image-slider .next:hover { background: rgba(2,132,199,.85); }
+
+/* Text blocks inside card */
+.product h3 {
+  font-size: 1.05rem;
+  margin: 10px 6px 4px;
+  color: #1f2937;
+  font-weight: 800;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.6em;
+}
+.product p {
+  margin: 2px 6px;
+  color: #6b7280;
+  font-size: .92rem;
+}
+
+/* Price emphasis (second <p> in details block) */
+.product p:nth-of-type(2) {
+  color: #1f2937;
+  font-weight: 800;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+/* Optional quantity helpers */
+.product .qty--ok  { color: #16a34a; }
+.product .qty--low { color: #eab308; }
+.product .qty--out { color: #ef4444; }
+
+/* Card-level buttons */
+.product form button,
+.product > button {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #111827;
+  color: #fff;
+  border: 0;
+  font-weight: 700;
+  transition: transform .12s, background .2s;
+}
+.product form button:hover,
+.product > button:hover {
+  transform: translateY(-1px);
+  background: #0ea5e9;
+}
+
+/* RTL arrows flip */
+html[dir="rtl"] .image-slider .prev { right: 8px; left: auto; }
+html[dir="rtl"] .image-slider .next { left: 8px; right: auto; }
+
+/* Uniform product tiles (fixed width grid option) */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 260px));
+  justify-content: center;
+  gap: 18px;
+}
+.product-card {
+  width: 260px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slider in fixed tile mode */
+.image-slider { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 12px; background: #f3f4f6; }
+.slider-image  { width: 100%; height: 100%; object-fit: cover; display: block; }
+.image-slider .prev,
+.image-slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  cursor: pointer;
+  line-height: 32px;
+}
+.image-slider .prev { left: 8px; }
+.image-slider .next { right: 8px; }
+
+@media (max-width: 640px) {
+  .products-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 200px)); }
+  .product-card   { width: 200px; }
+}
+
+/* ========================
+   MODAL (zoom image)
+========================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  background-color: rgba(0,0,0,.8);
+  backdrop-filter: blur(2px);
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.5);
+}
+.close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  cursor: pointer;
+  text-shadow: 0 2px 8px rgba(0,0,0,.6);
+}
+/* ========================
+   Products page layout tweaks
+========================== */
+
+/* 1) Remove the big white outer container box */
+.container {
+  /* background: transparent !important; */
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* 2) Shrink the grey search form panel by ~35% */
+form {
+  background: var(--surface-2); /* keep grey background */
+  transform: scale(0.8);       /* shrink to ~65% of original size */
+  transform-origin: top center; /* shrink from the top */
+  margin-top: 10px;
+}
+
+/* Optional: adjust spacing under the smaller form */
+form + .products {
+  margin-top: 1px;
+}
+
+
+
+/*not necessary at all just minimize the width*/
+
+/* Only target the container that wraps the Products search form on products.php */
+.container:has(> form[action="products.php"]) {
+  /* background: transparent !important; */
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;      /* remove inner padding so results sit right under the form */
+  margin-bottom: 0 !important;
+}
+
+/* Make the grey filters panel compact WITHOUT scaling */
+.container:has(> form[action="products.php"]) form {
+  background: var(--surface-2);
+  padding: 12px 14px !important;   /* real shrink */
+  border-radius: 14px;
+  max-width: 720px;
+  margin: 10px auto 8px !important;  /* small gap under form */
+}
+
+
+
