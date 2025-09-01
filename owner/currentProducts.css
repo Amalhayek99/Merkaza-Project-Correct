@@ -1,0 +1,142 @@
+/* ===== Current Products — Premium Classic Look ===== */
+
+:root{
+  --cp-bg: #f3f4f6;
+  --cp-card-bg: #ffffff;
+  --cp-border: #e7e7ea;
+  --cp-text: #1f2937;
+  --cp-muted: #6b7280;
+  --cp-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+
+
+
+body{
+  background: var(--cp-bg);
+}
+
+/* Page container */
+.cp-container{
+  max-width: 1180px;
+  margin: 32px auto 48px;
+  padding: 0 16px;
+}
+
+/* Header */
+.cp-header{
+  background: var(--cp-card-bg);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: var(--cp-shadow);
+  margin-bottom: 18px;
+}
+
+.cp-icon{
+  font-size: 28px;
+  line-height: 1;
+}
+
+.cp-title{
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--cp-text);
+  letter-spacing: .2px;
+}
+
+.cp-subtitle{
+  font-size: 13px;
+  color: var(--cp-muted);
+  margin-top: 2px;
+}
+
+.cp-legend .badge{
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Table wrapper */
+.cp-table-wrap{
+  background: var(--cp-card-bg);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  box-shadow: var(--cp-shadow);
+  overflow: hidden;
+}
+
+/* Table */
+.cp-table{
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.cp-thead th{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,0)) , var(--cp-card-bg);
+  color: var(--cp-text);
+  font-weight: 700;
+  border-bottom: 1px solid var(--cp-border);
+  padding: 14px 12px;
+  text-transform: none;
+  letter-spacing: .3px;
+}
+
+/* Rows */
+.cp-table tbody tr{
+  border-top: 1px solid var(--cp-border);
+  transition: background-color .18s ease, transform .06s ease;
+}
+
+.cp-table tbody tr:hover{
+  background: rgba(0,0,0,.03);
+}
+
+
+/* Critical and OK row accents */
+.cp-row-crit{
+  box-shadow: inset 4px 0 0 #dc3545;
+}
+.cp-row-ok{
+  box-shadow: inset 4px 0 0 #198754;
+}
+
+/* Cells */
+.cp-table td{
+  padding: 12px 12px;
+  color: var(--cp-text);
+}
+
+/* Product name */
+.cp-product{
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+/* Percent badge size */
+.cp-badge{
+  padding: .5rem .65rem;
+  font-weight: 700;
+  border: 1px solid var(--cp-border);
+}
+
+/* Empty state */
+.cp-empty{
+  background: var(--cp-card-bg);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  color: #198754;
+  font-weight: 700;
+  box-shadow: var(--cp-shadow);
+  margin-top: 14px;
+}
+
+/* Small screens polish */
+@media (max-width: 768px){
+  .cp-title{ font-size: 20px; }
+  .cp-legend .badge{ margin-top: 8px; display: inline-block; }
+}

@@ -1,0 +1,170 @@
+/* ========================
+   OWNER — SHARED TOKENS & BASE
+========================== */
+:root {
+  /* Project colors (needed for nav/footer) */
+  --primary-color: #333;
+  --secondary-color: #ff6347;
+
+  /* Pro+Classic tokens */
+  --surface: #ffffff;
+  --surface-2: #f7f8fa;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --brand: #111827;
+  --brand-2: #0ea5e9;
+  --ring: rgba(2,132,199,.35);
+  --card: #ffffff;
+  --card-border: #e5e7eb;
+  --shadow: 0 6px 20px rgba(0,0,0,.06);
+  --radius: 16px;
+}
+
+html, body { height: 100%; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+}
+
+.wrapper { display:flex; flex-direction:column; min-height:100vh; }
+.flex-grow-1 { flex:1; }
+footer { margin-top:auto; }
+body.scrollable { overflow:auto; }
+
+h2 {
+  color: var(--text);
+  text-align: center;
+  margin-bottom: 18px;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+/* ========================
+   NAVBAR (header.php / navbar.php)
+========================== */
+nav {
+  background-color: var(--primary-color);
+  padding: 1em;
+  width: 100%;
+  text-align: center;
+}
+nav a { color:#fff; margin:0 15px; text-decoration:none; font-size:18px; }
+nav a:hover { color: var(--secondary-color); }
+
+/* ========================
+   CONTAINERS
+========================== */
+.container, .container1 {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background: var(--surface);
+  padding: 28px 28px 8px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+/* ========================
+   FOOTER
+========================== */
+footer{
+  width:100%; padding:.5px 0;
+  background-color: var(--primary-color); color:#fff; text-align:center;
+}
+footer::before{
+  content:''; display:block; width:100%; height:1px; background:#fff; margin-bottom:5px;
+}
+
+/* ========================
+   FORMS (filters etc.)
+========================== */
+form{
+  width:100%; max-width:980px; margin:0 auto 22px;
+  padding:14px 16px; gap:8px;
+  background: var(--surface-2);
+  border:1px solid var(--card-border);
+  border-radius:18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  display:flex; flex-direction:column; align-items:center;
+}
+form input, form select, form textarea, form button{
+  margin:10px 0; padding:10px 14px;
+  width:100%; max-width:520px; font-size:16px;
+  border-radius:14px; border:1px solid var(--card-border);
+  box-sizing:border-box; background: var(--card); color: var(--text);
+  transition: box-shadow .2s, border-color .2s, transform .03s;
+  outline:none;
+}
+form input:focus, form select:focus, form textarea:focus{
+  border-color: var(--brand-2); box-shadow: 0 0 0 4px var(--ring);
+}
+.button, button[type="submit"]{
+  width:100%; max-width:240px; border-radius:999px; border:0;
+  padding:12px 18px; font-weight:700; letter-spacing:.2px;
+  background: var(--brand); color:#fff;
+  box-shadow: 0 6px 14px rgba(17,24,39,.18);
+  cursor:pointer;
+}
+.button:hover, button[type="submit"]:hover{
+  transform: translateY(-1px);
+  background: linear-gradient(0deg, var(--brand) 0%, var(--brand-2) 100%);
+}
+
+
+/* ========================
+   MISC / SHARED
+========================== */
+.chart-container{ max-width:600px; margin:0 auto; }
+
+/* Cover backdrop used by owner pages */
+.with-cover { position: relative; }
+.with-cover::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: var(--cover-image) center / cover no-repeat;
+  opacity:.30;
+  z-index:0;
+  pointer-events:none;
+  animation: bgfade .5s ease-out;
+}
+@keyframes bgfade { from{opacity:0;} to{opacity:var(--bg-opacity, .30);} }
+.with-cover > * { position:relative; z-index:1; }
+
+/* Utilities */
+.surface-none{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+.surface-none > .card,
+.surface-none .card,
+.surface-none > .content-card,
+.surface-none .content-card{
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+.surface-none,
+.surface-none .card,
+.surface-none .content-card{
+  border-radius: 0 !important;
+}
+.section-heading{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  display: block;
+  margin: 6px 8px 14px;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.3;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #111;
+}
+
+.link-underline-none { text-decoration: none; font-weight:600; }
+.link-underline-none:hover { text-decoration: underline; }

@@ -1,0 +1,52 @@
+/* Background image variant used on verify page */
+body.auth-bg{
+  min-height: 100vh;
+  background: url('../public/cover/login/cover26.jpg') center/cover no-repeat fixed;
+  position: relative;
+}
+body.auth-bg::before{
+  content:''; position: fixed; inset: 0;
+  background: rgba(255,255,255,.30); pointer-events: none;
+}
+
+/* Center card */
+.auth-wrap{
+  max-width: 540px;
+  margin: 80px auto 40px;
+}
+.auth-card{
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(0,0,0,.10);
+  overflow: hidden;
+}
+.auth-card .card-header{
+  background: transparent;
+  border-bottom: 0;
+  padding: 28px 28px 0;
+  text-align: center;
+}
+.auth-title{ font-weight: 800; letter-spacing: .3px; }
+.auth-sub{ font-size: .95rem; opacity: .75; margin-top: 6px; }
+.auth-card .card-body{ padding: 28px; }
+
+.form-control{ height: 48px; border-radius: 12px; }
+.btn-auth{ height: 48px; border-radius: 14px; font-weight: 700; letter-spacing: .3px; }
+
+.brand-mini{
+  display: inline-flex;
+  width: 44px; height: 44px; border-radius: 12px;
+  align-items: center; justify-content: center;
+  background: linear-gradient(135deg,#111827,#334155);
+  color: #fff; font-weight: 800;
+}
+.result-box{ margin: 0 28px 10px; }
+
+.card-footer{
+  border-top: 0; background: transparent;
+  padding: 0 28px 28px; text-align: center; font-size: .95rem;
+}
+.card-footer a{ text-decoration: none; font-weight: 700; }
+
+/* reserves space for your top-right toggle */
+.auth-topbar{ position: fixed; right: 16px; top: 12px; z-index: 10; }

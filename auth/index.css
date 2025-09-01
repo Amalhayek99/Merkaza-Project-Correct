@@ -1,0 +1,9 @@
+/* Center and tidy the login form; replaces inline margins */
+.container1 form h2{ margin-bottom: 6px; }
+.container1 form input{ margin-bottom: 10px; }
+.container1 form button{ margin: 6px 0 10px; }
+.container1 form p{ min-height: 20px; margin: 4px 0; }
+
+/* Links under the form */
+.container1 form a{ font-weight:600; text-decoration:none; }
+.container1 form a:hover{ text-decoration:underline; }

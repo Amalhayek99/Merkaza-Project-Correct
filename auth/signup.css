@@ -1,0 +1,5 @@
+/* Signup card polish (uses Bootstrap card) */
+.add-shell .card{ border-radius:18px; box-shadow: var(--shadow); }
+.add-shell .card h2{ font-weight:800; letter-spacing:.2px; }
+.add-shell .form-control{ height:48px; border-radius:12px; }
+.add-shell .btn{ height:48px; border-radius:14px; font-weight:700; }

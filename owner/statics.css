@@ -1,0 +1,104 @@
+.stats-card {
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --head-bg: #f8fafc;
+  --head-text: #0f172a;
+  --accent: #0ea5e9;
+  --pos: #16a34a;
+  --neg: #dc2626;
+
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  padding: 12px 14px;
+  margin-top: 16px;
+}
+
+
+.premium-scroll {
+  overflow: auto;
+  border-radius: 12px;
+  max-height: 520px; /* needed for sticky header */
+}
+
+/* Scrollbar (webkit) */
+.premium-scroll::-webkit-scrollbar { height: 10px; width: 10px; }
+.premium-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
+.premium-scroll::-webkit-scrollbar-track { background: transparent; }
+
+.table-premium {
+  width: 100%;
+  border-collapse: separate;   /* row separators, not full grid */
+  border-spacing: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Beat generic/Bootstrap */
+.stats-card .table-premium,
+.stats-card .table-premium th,
+.stats-card .table-premium td {
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.stats-card .table-premium thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--head-bg) !important;
+  color: var(--head-text) !important;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: .02em;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line) !important;
+  white-space: nowrap;
+}
+
+.stats-card .table-premium tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line) !important;
+  vertical-align: middle;
+}
+
+.stats-card .table-premium tbody tr:hover {
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.table-premium thead th:first-child { border-top-left-radius: 12px; }
+.table-premium thead th:last-child  { border-top-right-radius: 12px; }
+.table-premium tbody tr:last-child td:first-child { border-bottom-left-radius: 12px; }
+.table-premium tbody tr:last-child td:last-child  { border-bottom-right-radius: 12px; }
+
+/* Column widths + alignment */
+.table-premium td:nth-child(1),
+.table-premium th:nth-child(1) { min-width: 220px; }      /* Product */
+.table-premium td:nth-child(8),
+.table-premium th:nth-child(8) { min-width: 280px; }      /* Sale Info */
+
+.table-premium td:nth-child(4),
+.table-premium td:nth-child(5),
+.table-premium td:nth-child(6),
+.table-premium td:nth-child(7) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.table-premium th:nth-child(2),
+.table-premium th:nth-child(3) {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Profit coloring (added via JS) */
+.table-premium td.profit-positive { color: var(--pos) !important; font-weight: 600; }
+.table-premium td.profit-negative { color: var(--neg) !important; font-weight: 600; }
+.table-premium td.profit-zero     { color: var(--muted) !important; font-weight: 600; }
+
+
+

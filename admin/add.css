@@ -1,0 +1,20 @@
+      .add-shell{ max-width: 860px; margin: 28px auto 56px; }
+      .add-title{ text-align:center; font-weight:800; font-size:28px; letter-spacing:.2px; margin-bottom:14px; }
+      .add-card{ background: rgba(255,255,255,.78); border-radius: 20px; box-shadow: 0 12px 40px rgba(0,0,0,.08); padding: 22px 22px 26px; }
+      .form-grid{ display: grid; grid-template-columns: 1fr; gap: 14px; }
+      .two-up{ display:grid; grid-template-columns: 1fr; gap:14px; }
+      @media (min-width: 768px){ .two-up{ grid-template-columns: 1fr 1fr; } }
+      .field label{ display:block; font-weight:700; font-size:.95rem; margin-bottom:6px; }
+      .field .required::after{ content:" *"; color:#ef4444; }
+      
+      .field input[type="text"], .field input[type="number"], .field select, .field textarea{ width:100%; background:#f7f8fb; border:1px solid transparent; border-radius:14px; padding:12px 14px; font-size:15px; transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease; }
+      .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-color:#1d4ed8; box-shadow:0 0 0 3px rgba(29,78,216,.25); }
+      .field textarea{ min-height:90px; resize: vertical; }
+      .droparea{ background: rgba(255,255,255,.55); border:2px dashed rgba(0,0,0,.18); border-radius:14px; padding:14px; text-align:center; transition: border-color .15s ease, background-color .15s ease; }
+      .droparea.dragover{ border-color:#2563eb; background: rgba(37,99,235,.06); }
+      .thumbs{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
+      .thumbs img{ width:72px; height:72px; object-fit:cover; border-radius:10px; box-shadow:0 6px 16px rgba(0,0,0,.12); }
+      .btn-pill{ display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:999px; padding:12px 22px; font-weight:800; background:#0f172a; color:#fff; transition: transform .12s ease, box-shadow .12s ease, background-color .15s ease; }
+      .btn-pill:hover{ background:#111827; transform:translateY(-1px); box-shadow:0 8px 18px rgba(15,23,42,.35); }
+      .btn-pill:active{ transform:translateY(0); box-shadow:none; }
+      .btn-wide{ width: min(360px, 100%); margin: 8px auto 0; display:block; }

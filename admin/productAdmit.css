@@ -1,0 +1,50 @@
+/* ========================
+   PENDING PRODUCT APPROVAL UI
+   (productAdmit.php)
+========================== */
+
+/* Cards grid */
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;
+}
+
+/* NOTE: Scoped to avoid clashing with Bootstrap .card elsewhere */
+.grid .card{
+  background:var(--card);color:var(--text);border:1px solid var(--card-border);
+  border-radius:18px;padding:16px;box-shadow:var(--shadow);
+  transition:transform .18s,box-shadow .2s,border-color .2s;text-align:center;
+}
+.grid .card:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.10);border-color:rgba(2,132,199,.25);}
+.grid .card img{
+  width:100%;aspect-ratio:4/3;object-fit:contain;background:#f3f4f6;border-radius:12px;margin-bottom:10px;
+}
+.grid .card h3{margin:8px 0 4px;font-size:1.05rem;font-weight:800;}
+.grid .card p{margin:2px 0;font-size:.92rem;color:var(--muted);}
+.grid .card p strong,.grid .card p b{color:var(--text);}
+.grid .card .adder-chip{
+  display:inline-block;margin-top:6px;padding:4px 10px;border-radius:999px;
+  background:var(--surface-2);color:var(--muted);font-size:.8rem;
+}
+
+/* Actions row */
+.actions{margin-top:14px;display:flex;justify-content:center;gap:10px;}
+
+/* NOTE: Scoped .btn to cards to avoid colliding with Bootstrap .btn */
+.grid .card .btn{
+  border:0;border-radius:12px;padding:8px 14px;font-weight:700;color:#fff;
+  transition:transform .12s,filter .2s,background .2s;display:inline-block;text-decoration:none;
+}
+.grid .card .btn:hover{transform:translateY(-1px);}
+.grid .card .approve{background:#0b0d12;}
+.grid .card .approve:hover{background:#111827;}
+.grid .card .delete{background:#dc3545;}
+.grid .card .delete:hover{filter:brightness(1.05);}
+
+.no-items{color:var(--muted);text-align:center;margin-top:24px;}
+
+/* ========================
+   Image Modal (only here)
+========================== */
+.modal{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(2px);}
+.modal-content{margin:auto;display:block;max-width:80%;max-height:80%;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.5);}
+.close{position:absolute;top:18px;right:24px;color:#fff;font-size:40px;font-weight:700;cursor:pointer;text-shadow:0 2px 8px rgba(0,0,0,.6);}

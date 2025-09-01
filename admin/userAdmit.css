@@ -1,0 +1,35 @@
+/* ========================
+   USERS APPROVAL TABLE
+   (userAdmit.php)
+========================== */
+.users-table-wrap{
+  max-width:980px;margin:0 auto 40px;background:var(--surface);
+  border:1px solid var(--card-border);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;
+}
+.users-table-wrap{overflow-x:auto;}
+.users-table{
+  width:100%;border-collapse:separate;border-spacing:0;font-size:15px;
+}
+.users-table thead th{
+  position:sticky;top:0;background:var(--surface-2);color:var(--text);
+  text-transform:none;font-weight:700;letter-spacing:.2px;padding:12px 14px;border-bottom:1px solid var(--card-border);
+}
+.users-table tbody td{
+  padding:12px 14px;border-bottom:1px solid var(--card-border);vertical-align:middle;color:var(--text);background:var(--surface);
+}
+.users-table tbody tr:nth-child(odd) td{
+  background:color-mix(in oklab,var(--surface) 92%,var(--surface-2));
+}
+@supports not (color-mix(in oklab, white, black)){
+  .users-table tbody tr:nth-child(odd) td{background:var(--surface);}
+}
+.users-table tbody tr:hover td{background:var(--surface-2);}
+.users-table .action-cell{text-align:center;}
+
+.inline-form{display:inline;background:transparent;padding:0;margin:0;}
+
+.btn-approve{
+  border:0;border-radius:999px;padding:8px 14px;font-weight:700;color:#fff;background:#0b0d12;
+  transition:transform .12s,background .2s;
+}
+.btn-approve:hover{transform:translateY(-1px);background:#111827;}

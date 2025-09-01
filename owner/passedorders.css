@@ -1,0 +1,48 @@
+/* ===== Passed Orders (history) ===== */
+.orders-table-wrap{
+  max-width: 980px;
+  margin: 0 auto 40px;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  overflow-x: auto;
+}
+.orders-table{
+  width:100%;
+  border-collapse: separate;
+  border-spacing:0;
+  font-size:15px;
+}
+.orders-table thead th{
+  position: sticky; top:0;
+  background: var(--surface-2);
+  color: var(--text);
+  font-weight:700;
+  letter-spacing:.2px;
+  padding:12px 14px;
+  border-bottom:1px solid var(--card-border);
+  text-align:center;
+}
+.orders-table tbody td{
+  padding:12px 14px;
+  border-bottom:1px solid var(--card-border);
+  text-align:center;
+  color: var(--text);
+  background: var(--surface);
+}
+/* zebra + hover */
+.orders-table tbody tr:nth-child(odd) td{
+  background: color-mix(in oklab, var(--surface) 92%, var(--surface-2));
+}
+@supports not (color-mix(in oklab, white, black)){
+  .orders-table tbody tr:nth-child(odd) td{ background: var(--surface); }
+}
+.orders-table tbody tr:hover td{ background: var(--surface-2); }
+
+/* emphasis colors */
+.orders-table .qty-added{
+  color:#16a34a;         /* GREEN instead of red */
+  font-weight:800;
+}

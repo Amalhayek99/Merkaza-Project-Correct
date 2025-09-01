@@ -1,0 +1,164 @@
+
+        /* Page-specific tweaks only; keep layout consistent with global */
+        html, body { height: 100%; margin: 0; }
+
+        /* Remove body padding so the footer can span full width */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+        }
+
+        /* Use inner container for page spacing */
+        .page-container { padding: 20px; }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        form{
+            background: white;
+            margin: auto;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            max-width: 800px;
+            padding: 20px; /* so it matches other pages */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+        }
+        table {
+            background: white;
+            padding: 25px;
+            margin: auto;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            width: 95%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        button {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button[name="add"], button[name="update"] {
+            background-color: #28a745;
+            color: white;
+        }
+        button[name="update"] { background-color: orange; }
+        button[name="cancel"] {
+            background-color: gray;
+            color: white;
+            margin-left: 10px;
+        }
+        th, td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background-color: #007B6E;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        td { vertical-align: middle; }
+        td .action-buttons {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .action-buttons form { display: inline-block; }
+        .action-buttons button { padding: 6px 12px; font-size: 13px; }
+        .btn-edit { background-color: #FFA500; color: white; }
+        .btn-delete { background-color: #dc3545; color: white; }
+        td.conditioon-cell {
+            max-width: 180px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        /* Optional: make the table container responsive */
+        .sales-table-wrap { overflow-x: auto; }
+
+        /* Ensure all table cells, including action buttons, align vertically the same */
+.sales-table td {
+    vertical-align: middle;
+}
+
+/* Keep action buttons inline so they align like text */
+.sales-table td.action-buttons {
+    display: table-cell; /* overrides flex */
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Align the buttons inline and centered horizontally */
+.sales-table td.action-buttons form {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+/* Make table use full width of its wrapper */
+.sales-table { width: 100%; }
+
+/* Slightly tighter cell padding */
+.sales-table th,
+.sales-table td { padding-left: 12px; padding-right: 12px; }
+
+/* Constrain the Action column so buttons fit inside */
+.sales-table th:last-child,
+.sales-table td:last-child {
+  width: 140px;              /* tweak to 130–150 if needed */
+  overflow: hidden;          /* clip any accidental overflow */
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Keep buttons on one line and small enough to fit */
+.sales-table td.action-buttons { white-space: nowrap; text-align: center; }
+.sales-table .btn-edit,
+.sales-table .btn-delete {
+  padding: 6px 6px;         /* was larger */
+  font-size: 12px;           /* was bigger */
+  line-height: 1;
+}
+
+/* If the page is very narrow, allow horizontal scroll instead of overflow */
+.sales-table-wrap { overflow-x: auto; }
+
+/* Stack Edit/Delete vertically in the Action column */
+.sales-table td.action-buttons {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    align-items: center;
+    gap: 6px; /* space between buttons */
+    white-space: nowrap;
+}
+
+/* Smaller buttons */
+.sales-table .btn-edit,
+.sales-table .btn-delete {
+    padding: 4px 10px;   /* smaller padding */
+    font-size: 12px;     /* smaller text */
+    border-radius: 8px;  /* optional: slightly less round */
+    width: 70px;         /* fixed width so both match */
+    text-align: center;
+}

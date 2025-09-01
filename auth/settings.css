@@ -1,0 +1,11 @@
+/* Settings page tweaks */
+.container form + form{ margin-top: 14px; }
+
+.container .form-group{ width:100%; max-width:520px; text-align:left; }
+.container .form-group label{ display:block; margin-bottom:6px; font-weight:600; }
+
+.container p[style*="color: red"]{ color:#dc2626 !important; }
+.container p[style*="color: green"]{ color:#16a34a !important; }
+
+/* Make the cardless layout feel airy */
+.container.surface-none{ padding-top: 8px; }
